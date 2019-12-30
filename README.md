@@ -1,24 +1,26 @@
-# expose
+# NTIC Weather app
 
-## Project setup
+This a a simple weather web app created using VueJS and DarkSky.net weather API.
+This app uses a responsive design, thus allowing it to be rendered correctly on mobile devices.
+
+##Installation:
+###1)Install NPM
+###2) Clone the project:
+
 ```
-npm install
+https://github.com/DGLcsGaming/expose.git
 ```
 
-### Compiles and hot-reloads for development
+###3) Run the app:
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+###4) To build the app use this command:
+
 ```
-npm run build
+npm build serve
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+&copy;2020 Fayçal Ghoul, NTIC
