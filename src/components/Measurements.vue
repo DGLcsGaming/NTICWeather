@@ -1,22 +1,29 @@
 <template>
   <section>
     <div class="cloudCover">
-      <img src="../assets/icons/cloud.svg" /><span class="cloudCover__value">{{
+      <img src="../assets/icons/cloud.svg" />
+      <span class="cloudCover__value">
+        {{
         cloudCover
-      }}</span
-      >&percnt;
+        }}
+      </span>&percnt;
     </div>
     <div class="wind-speed">
-      <img src="../assets/icons/wind.svg" /><span class="wind__value">{{
+      <img src="../assets/icons/wind.svg" />
+      <span class="wind__value">
+        {{
         windSpeed
-      }}</span>
+        }}
+      </span>
       Km/h
     </div>
     <div class="humidity">
-      <img src="../assets/icons/humidity.svg" /><span class="humidity__value">{{
+      <img src="../assets/icons/humidity.svg" />
+      <span class="humidity__value">
+        {{
         humidity
-      }}</span
-      >&percnt;
+        }}
+      </span>&percnt;
     </div>
   </section>
 </template>
@@ -32,7 +39,7 @@ export default {
 <style scoped>
 section {
   width: 100%;
-  padding-top: 25px;
+  font-weight: 900;
 
   display: flex;
   flex-direction: row;

@@ -1,8 +1,12 @@
 <template>
   <section>
+    <div class="time d-flex flex-row">
+      <img class="time__icon" src="../assets/icons/time.svg" />
+      <div class="local__time">{{localTime}}</div>
+    </div>
+
     <div class="location">{{ location }}</div>
     <div class="weather__description">{{ description }}</div>
-    <img class="weather__icon" :src="icon" />
   </section>
 </template>
 
@@ -10,7 +14,7 @@
 export default {
   name: "Weather",
 
-  props: ["location", "description", "icon"]
+  props: ["location", "description", "localTime"]
 };
 </script>
 
@@ -19,6 +23,9 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
+  font-size: 150%;
+  white-space: nowrap;
 }
 
 .location {
@@ -37,8 +44,19 @@ section {
   text-transform: uppercase;
 }
 
-.weather__icon {
-  width: 12em;
-  padding-bottom: 9em;
+.local__time {
+  font-size: 24pt;
+}
+
+.time__icon {
+  width: 48px;
+  height: 48px;
+  vertical-align: middle;
+  filter: invert(93%) sepia(9%) saturate(0%) hue-rotate(290deg) brightness(203%)
+    contrast(101%);
+}
+
+.time {
+  margin-bottom: 1em;
 }
 </style>
