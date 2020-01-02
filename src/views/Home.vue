@@ -37,9 +37,14 @@ export default {
     SearchBox: SearchBox
   },
   mounted() {
-    API.getWeather("36.365", "6.6147").then(result => {
-      this.updateWeather(result);
-    });
+    if (navigator.onLine) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.setLocationByGEO(
+          position.coords.latitude,
+          position.coords.longitude
+        );
+      });
+    }
   },
   data() {
     return {
@@ -81,6 +86,14 @@ export default {
         API.getWeather(lo.latitude, lo.longitude).then(result => {
           this.updateWeather(result);
         });
+      });
+    },
+    setLocationByGEO(latitude, longitude) {
+      API.getCityName(latitude, longitude).then(result => {
+        this.forecast.location = result.name;
+      });
+      API.getWeather(latitude, longitude).then(result => {
+        this.updateWeather(result);
       });
     },
     updateWeather(result) {
